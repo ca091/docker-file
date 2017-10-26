@@ -1,6 +1,6 @@
 ### nginx
 ```
-docker run -d -p 80:80 -v /Users/cq/Documents/github/docker-file/nginx:/app -v /Users/cq/Documents/github/docker-file/nginx/conf.d:/etc/nginx/conf.d  nginx
+docker run -d -p 80:80 -p 443:443 -v /Users/cq/Documents/github/docker-file/nginx:/app -v /Users/cq/Documents/github/docker-file/nginx/conf.d:/etc/nginx/conf.d  nginx
 ```
 
 ### node
@@ -29,4 +29,9 @@ docker run -d -p 8081:8080 -v /Users/cq/Documents/github/docker-file/tomcat/weba
 ```
 docker run -it --rm -v "$PWD":/usr/src/mymaven -w /usr/src/mymaven maven mvn clean install
 docker run -it --rm -v /Users/cq/Documents/idea/test1:/usr/src/mymaven -w /usr/src/mymaven maven mvn clean install
+```
+
+### https 证书生成
+```
+openssl req -days 3650 -x509 -sha256 -nodes -newkey rsa:2048 -keyout feiyu.key -out feiyu.crt
 ```
