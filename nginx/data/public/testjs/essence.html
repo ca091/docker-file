@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="robots" content="index,follow"/>
+    <title>js essence</title>
+
+</head>
+<body>
+<script>
+    var user = {
+        name: 'mizone',
+        age: 11
+    };
+    var sex = user.sex || 1;
+    var age = user && user.age;
+
+    var obj = {};
+    obj.double = function x(num) {
+        if(isNaN(num)){
+            throw new Error('argument is not a number',123);
+        }
+        var add = function ad(a, b) {
+            console.log(this); //this 指向 window
+            return a + b;
+        };
+        var result = add(num, num); //函数调用模式
+        console.log(result);
+        return result
+    };
+//    try {
+//        obj.double('s');
+//    }catch(e){
+//       console.log('error => ', e)
+//    }
+
+// 获取对象 属性/方法
+//    console.log('Object.prototype => ', Object.getOwnPropertyNames(Object.prototype));
+//    console.log('Function.prototype => ', Object.getOwnPropertyNames(Function.prototype));
+//    console.log('Array.prototype => ', Object.getOwnPropertyNames(Array.prototype));
+//    console.log('String.prototype => ', Object.getOwnPropertyNames(String.prototype));
+
+    //Function 原型扩展
+    Function.prototype.method = function (name, func) {
+        if(!this.prototype[name]){
+            this.prototype[name] = func
+        }
+        return this
+    };
+
+    //Number 原型扩展 => Number.prototype.integer = function(){}
+    Number.method('integer', function () {
+        return Math[this<0 ? 'ceil' : 'floor'](this)
+    });
+
+    console.log('-10/3 取整 => ', (-10/3).integer());
+
+
+</script>
+
+</body>
+</html>
