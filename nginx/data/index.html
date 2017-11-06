@@ -18,7 +18,7 @@
             }
         }
         window.addEventListener('resize', throttle(refreshRem, 200));
-        refreshRem();</script><link href=/static/css/app.a61942e9770b1588b085a65e0b6de86e.css rel=stylesheet></head><body style="font-size: 12px"><div id=app></div><script src=/static/xhr.js></script><script>//    fix();
+        refreshRem();</script><link href=/static/css/app.11090a18a0639b1c7eb2f39bbadf7ac4.css rel=stylesheet></head><body style="font-size: 12px"><div id=app></div><script src=/static/xhr.js></script><script>//    fix();
 //    修复小米max rem计算错误
 //    function fix() {
 //        var ua = navigator.userAgent;
@@ -40,15 +40,17 @@
 //            }, 100);
 //        }
 //    }
-    if('https:' === location.protocol && 'serviceWorker' in navigator){
-        navigator.serviceWorker.register('/sw.js')
-            .then(function (registration) {
-                console.log('ServiceWorker登记成功，范围为', registration.scope);
-            })
-            .catch(function (err) {
-                console.log('ServiceWorker登记失败：', err);
-            })
-    }
+
+//    if('https:' === location.protocol && 'serviceWorker' in navigator){
+//        navigator.serviceWorker.register('/sw.js')
+//            .then(function (registration) {
+//                console.log('ServiceWorker登记成功，范围为', registration.scope);
+//            })
+//            .catch(function (err) {
+//                console.log('ServiceWorker登记失败：', err);
+//            })
+//    }
+
     localStorage.setItem('dpr', window.devicePixelRatio || 1);
     onerror = function (msg, source, line, col, error) {
         if(msg == 'Script error.' && !source) return false;
@@ -71,4 +73,4 @@
     window.addEventListener("online", function(e) {
         //work in ios
         location.reload()
-    })</script><script src=/static/Umeng.js></script><script>console.log(' build time: 2017-10-19 19:53:45 ')</script><script type=text/javascript src=/static/js/manifest.4e3a9112407b819c171e.js></script><script type=text/javascript src=/static/js/vendor.704a2e1db14f5d2527f2.js></script><script type=text/javascript src=/static/js/app.3a30af63d07f2a51dddb.js></script></body></html>
+    })</script><script src=/static/Umeng.js></script><script>console.log(' build time: 2017-11-03 20:03:33 ')</script><script type=text/javascript src=/static/js/manifest.9f3f12dc1955f18e4065.js></script><script type=text/javascript src=/static/js/vendor.f106ca3c9aa671575ea2.js></script><script type=text/javascript src=/static/js/app.2f04b1904d50605dfeef.js></script></body></html>
