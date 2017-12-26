@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-touch-fullscreen content=yes><meta name=format-detection content="telephone=no,email=no"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="shortcut icon" href=/static/ico/favicon.ico><title>飞鱼环球旅行</title><script>// 设置根字体大小
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/static/ico/favicon.ico><title>飞鱼环球</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><script>// 设置根字体大小
         function refreshRem() {
             var root = document.documentElement;
             var width = root.clientWidth;
@@ -18,41 +18,7 @@
             }
         }
         window.addEventListener('resize', throttle(refreshRem, 200));
-        refreshRem();</script><link href=/static/css/app.11090a18a0639b1c7eb2f39bbadf7ac4.css rel=stylesheet></head><body style="font-size: 12px"><div id=app></div><script src=/static/xhr.js></script><script>//    fix();
-//    修复小米max rem计算错误
-//    function fix() {
-//        var ua = navigator.userAgent;
-//        var isIOS = /(iPhone|iPad|iPod)/.test(ua);
-//        var root = document.documentElement;
-//        var cw = root.clientWidth;
-//        var fs = root.style.fontSize.replace('px', '');
-//        if(!isIOS){
-//            var div = document.createElement('div');
-//            div.style.width = '10rem';
-//            document.body.appendChild(div);
-//            setTimeout(function () {
-//                var dw = div.clientWidth;
-//                if (dw > cw) {
-//                    // 此时是出问题的情况
-//                    root.style.fontSize = (Number(fs) * cw / dw).toFixed(4) + 'px'
-//                }
-//                div.remove();
-//            }, 100);
-//        }
-//    }
-
-//    if('https:' === location.protocol && 'serviceWorker' in navigator){
-//        navigator.serviceWorker.register('/sw.js')
-//            .then(function (registration) {
-//                console.log('ServiceWorker登记成功，范围为', registration.scope);
-//            })
-//            .catch(function (err) {
-//                console.log('ServiceWorker登记失败：', err);
-//            })
-//    }
-
-    localStorage.setItem('dpr', window.devicePixelRatio || 1);
-    onerror = function (msg, source, line, col, error) {
+        refreshRem();</script><link href=/static/css/app.8fe5bbf5595dee25faaff87511bc4466.css rel=stylesheet></head><body style="font-size: 12px"><div id=app></div><script>onerror = function (msg, source, line, col, error) {
         if(msg == 'Script error.' && !source) return false;
         setTimeout(function () {
             console.log(msg, source, line)
@@ -63,14 +29,7 @@
                 code: 1,
                 content: ['msg: '+msg, 'source: '+source, 'error: '+JSON.stringify(error)].join('=>')
             }
-            pulldata('/reportlog', errObj)
+            console.log(errObj)
         },0)
         return false
-    }
-//    window.addEventListener("offline", function(e) {
-//        console.log("offline")
-//    })
-    window.addEventListener("online", function(e) {
-        //work in ios
-        location.reload()
-    })</script><script src=/static/Umeng.js></script><script>console.log(' build time: 2017-11-03 20:03:33 ')</script><script type=text/javascript src=/static/js/manifest.9f3f12dc1955f18e4065.js></script><script type=text/javascript src=/static/js/vendor.f106ca3c9aa671575ea2.js></script><script type=text/javascript src=/static/js/app.2f04b1904d50605dfeef.js></script></body></html>
+    }</script><script>console.log(' build time: 2017-12-26 18:13:19 ')</script><script type=text/javascript src=/static/js/manifest.7493895c9d884bc0294f.js></script><script type=text/javascript src=/static/js/vendor.758c53834c913076d569.js></script><script type=text/javascript src=/static/js/app.5836c99cf115f9b6acca.js></script></body></html>
