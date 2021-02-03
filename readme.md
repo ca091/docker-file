@@ -9,6 +9,12 @@ node cq$ > docker build -t hello .
 node cq$ > docker run -d -p 4000:8888 hello
 ```
 
+### php
+```
+$ docker build -t v-site .
+$ docker run -it --rm --name v-official-website v-site
+```
+
 ### mysql
 ```
 docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /Users/cq/Documents/github/docker-file/mysql/data:/var/lib/mysql mysql
