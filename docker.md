@@ -27,6 +27,17 @@ docker start <container_id>
 docker stop <container_id>
 ```
 
+### docker compose
+```
+docker-compose -h
+docker-compose up -d
+```
+
+### 重启 nginx
+```
+docker exec nginx nginx -s reload
+```
+
 ### inspect 目录映射
 ```
 docker run -d -p 80:80 -v /Users/cq/Documents/github/docker-file/nginx:/app -v /Users/cq/Documents/github/docker-file/nginx/conf.d:/etc/nginx/conf.d  nginx
@@ -40,21 +51,6 @@ docker exec -ti <container_id> /bin/bash
 apt-get update
 apt-get install vim
 exit
-```
-
-### node
-```
-FROM node
-
-WORKDIR /app/hello
-
-ADD . /app/hello
-
-RUN npm install
-
-EXPOSE 8888
-
-CMD ["node", "server.js"]
 ```
 
 ### 日志
